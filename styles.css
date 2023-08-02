@@ -303,6 +303,45 @@ nav a:after {
   border: none;
 }
 
+.cta-section {
+  padding:50px 0px;
+  background-color: #059df1;
+}
+
+.cta-section h5{
+  font-size:1.5em;
+}
+
+.cta-section h1 {
+  font-size:2.5em;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta-touch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px
+}
+
+.cta-touch p {
+  font-size: 2em;
+  color:#ffffff;
+  border-left:1px solid #ffffff;
+  padding-left:10px;
+}
+
+.cta-touch button {
+  padding:10px 20px 10px 20px;
+  background-color: #107df7;
+  color:#ffffff;
+  border: none;
+  margin-right:10px
+}
+
 @media screen and (max-width: 900px) {
   .toggleMenu {
     position: absolute;
@@ -346,5 +385,32 @@ nav a:after {
   }
   .container1 {
     margin-top: 30px;
+  }
+}
+
+
+@media screen and (max-width:767px){
+  .cta-section h5{
+    font-size:1em;
+  }
+  
+  .cta-section h1 {
+    font-size:1.5em;
+  }
+  .cta-touch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-touch button {
+    margin-bottom:20px;
+  }
+
+  .cta-touch p {
+    border-left:none;
+    border-top:2px solid #ffffff;
+    padding-top:20px;
   }
 }
