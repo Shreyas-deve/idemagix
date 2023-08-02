@@ -12,7 +12,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     />
     <style>
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1023px) {
         .tab-container {
           flex-direction: column;
         }
@@ -42,11 +42,13 @@
         .col-lg-6 img {
           width: 100%;
         }
+        
       }
     </style>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="loader"></div>
     <header class="row container1">
       <div class="toggleMenu" onclick="toggleMenu()"></div>
       <nav class="navigation row">
@@ -73,7 +75,7 @@
           Total knee replacement is a surgery to remove and r eplace the whole
           damaged knee joint with an artificial joint.
         </p>
-        <a href="" class="hero-btn">Enquire Now</a>
+        <a href="#contact" class="hero-btn" >Enquire Now</a>
       </div>
       <div class="row">
         <img src="/media/hero-image.jpg" alt="" />
@@ -515,9 +517,36 @@
       <hr />
     </section>
 
+    <section class="contact-form container" id="contact">
+      <h2 style="margin-bottom: 20px;">Contact Us</h2>
+      <form>
+        <div class="form-group row">
+          <label for="fullname"></label>
+          <input type="text" id="fullname" placeholder="Full Name" name="fullname" required>
+        </div>
+        <div class="form-group row">
+          <label for="email"></label>
+          <input type="email" id="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group row">
+          <label for="phone"></label>
+          <input type="tel" id="phone" placeholder="Phone Number" name="phone" required>
+        </div>
+        <div class="form-group row">
+          <label for="message"></label>
+          <textarea id="message" name="message" placeholder="Describe Your Treatment Requirements" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="submit-btn">Send Enquiry</button>
+        </div>
+      </form>
+    </section>
+
     <script src="navigation.js"></script>
     <script src="tab.js"></script>
     <script src="faq.js"></script>
+    <script src="loading.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
@@ -530,6 +559,20 @@
           autoplay: true, // Set to true to enable autoplay
           autoplayTimeout: 5000, // Set the autoplay interval in milliseconds (5 seconds in this case)
           autoplayHoverPause: true, // Set to true to pause autoplay on mouse hover
+          responsive: {
+        // Breakpoint from 0 up (up to 576px width, targeting mobile devices)
+        0: {
+          items: 1
+        },
+        // Breakpoint from 576 up (from 576px width, targeting small tablets and above)
+        576: {
+          items: 2
+        },
+        // Breakpoint from 768 up (from 768px width, targeting tablets and above)
+        768: {
+          items: 3
+        }
+      }
         });
       });
     </script>

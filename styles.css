@@ -21,6 +21,43 @@ a {
   text-decoration: none;
 }
 
+.loader {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fb;
+  transition: opacity 2s visibility 2s;
+}
+
+.loader-hidden {
+  opacity:0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width:75px;
+  height:75px;
+  border:15px solid #dddddd;
+  border-top-color: #7449f5;
+  border-radius: 50%;
+  animation: loading 0.75s ease-in infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 h1,
 p {
   margin: 0;
@@ -226,6 +263,44 @@ nav a:after {
 .faq.active img {
   transform: rotate(180deg);
   transition: transform 0.5s ease-in;
+}
+
+.contact-form form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-form .form-group {
+  flex: 1 1 50%;
+  margin-bottom: 15px;
+}
+
+.contact-form .form-group label {
+  margin-bottom: 5px;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form .form-group.row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.contact-form .form-group.row input {
+  margin-right: 10px;
+}
+
+.submit-btn {
+  padding:10px 20px 10px 20px;
+  background-color: #059df1;
+  box-shadow:5px 5px 8px #3a3939;
+  border: none;
 }
 
 @media screen and (max-width: 900px) {
